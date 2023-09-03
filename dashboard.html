@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://kit.fontawesome.com/f4143d744b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body id="body_home">
+    <header>
+        <img src="Aktibo x200.png" id = "Aktibo_Logo" alt="Aktibo Logo">
+    </header>
+    <div class = "wrapper_home">
+        <div class = "sidebar">
+            
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-user-group"></i>Moments</a></li>
+                <li><a href="#"><i class="fa-solid fa-flag"></i>Flagged</a></li>
+                <li><a href="#"><i class="fa-solid fa-dumbbell"></i>Exercises</a></li>
+                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+
+    <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+        <canvas id="myChart2"></canvas>
+    </div>
+      <script>
+        const ctx = document.getElementById('myChart');
+        const ctx2 = document.getElementById('myChart2');
+        const doughnutLabel = {
+            id: 'doughnutLabel',
+            beforeDatasetsDraw(chart, args, pluginOptions) {
+                const {ctx, data} = chart;
+                ctx.save();
+                const xCoor = chart.getDatasetMeta(0).data[0].x;
+                const yCoor = chart.getDatasetMeta(0).data[0].y;
+                ctx.font = 'bold 30px sans-serif';
+                ctx.fillStyle = 'rgb(99,169,31)';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(`test`, xCoor, yCoor);
+            }
+        }
+
+        const doughnutLabel2 = {
+            id: 'doughnutLabel2',
+            beforeDatasetsDraw(chart, args, pluginOptions) {
+                const {ctx, data} = chart;
+                ctx.save();
+                const xCoor = chart.getDatasetMeta(0).data[0].x;
+                const yCoor = chart.getDatasetMeta(0).data[0].y;
+                ctx.font = 'bold 30px sans-serif';
+                ctx.fillStyle = 'rgb(99,169,31)';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(`time`, xCoor, yCoor);
+            }
+        }
+
+        new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            datasets: [{
+                data: [300, 50],
+                backgroundColor: [
+                    'rgb(99,169,31)',
+                    'rgb(40,54,26)',
+                ],
+            }]
+          },
+          plugins: [doughnutLabel]
+        });
+
+        new Chart(ctx2, {
+          type: 'doughnut',
+          data: {
+            datasets: [{
+                data: [300, 50],
+                backgroundColor: [
+                    'rgb(99,169,31)',
+                    'rgb(40,54,26)',
+                ],
+            }]
+          },
+          plugins: [doughnutLabel2]
+        });
+      </script>
+
+      
+</body>
+</html>

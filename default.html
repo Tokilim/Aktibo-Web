@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        const ctx = document.getElementById('myChart');
+        const doughnutLabel = {
+            id: 'doughnutLabel',
+            beforeDatasetsDraw(chart, args, pluginOptions) {
+                const {ctx, data} = chart;
+                ctx.save();
+                const xCoor = chart.getDatasetMeta(0).data[0].x;
+                const yCoor = chart.getDatasetMeta(0).data[0].y;
+                ctx.font = 'bold 30px sans-serif';
+                ctx.fillStyle = 'rgb(99,169,31)';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(`test`, xCoor, yCoor);
+            }
+        }
+        new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            datasets: [{
+                data: [300, 50],
+                backgroundColor: [
+                    'rgb(99,169,31)',
+                    'rgb(40,54,26)',
+                ],
+            }]
+          },
+          plugins: [doughnutLabel]
+        });
+
+        
+      </script>
+</body>
+</html>
