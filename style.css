@@ -280,3 +280,34 @@ header {
         background-color:pink;
     }
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 50% 50%;
+}
+.chart-container {
+    display: flex;
+    position: relative; 
+    height:10rem; 
+    width:100rem;
+    align-items: center;
+}
+
+
+.grid-container2 {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 100%; 
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+}
+
+.chart-container1 {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 75% 25%; 
+    align-items: center;
+    justify-content: center;
+}
