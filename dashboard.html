@@ -29,74 +29,75 @@
         
     </div>
 
-    <div class="chart-container" style="position: relative; height:40vh; width:80vw">
-        <canvas id="myChart"></canvas>
-    </div>
-    <div class="chart-container" style="position: relative; height:40vh; width:80vw">
-        <canvas id="myChart2"></canvas>
-    </div>
-      <script>
-        const ctx = document.getElementById('myChart');
-        const ctx2 = document.getElementById('myChart2');
-        const doughnutLabel = {
-            id: 'doughnutLabel',
-            beforeDatasetsDraw(chart, args, pluginOptions) {
-                const {ctx, data} = chart;
-                ctx.save();
-                const xCoor = chart.getDatasetMeta(0).data[0].x;
-                const yCoor = chart.getDatasetMeta(0).data[0].y;
-                ctx.font = 'bold 30px sans-serif';
-                ctx.fillStyle = 'rgb(99,169,31)';
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'middle';
-                ctx.fillText(`test`, xCoor, yCoor);
+    <div class="main_content">
+        <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+            <canvas id="myChart2"></canvas>
+        </div>
+        <script>
+            const ctx = document.getElementById('myChart');
+            const ctx2 = document.getElementById('myChart2');
+            const doughnutLabel = {
+                id: 'doughnutLabel',
+                beforeDatasetsDraw(chart, args, pluginOptions) {
+                    const {ctx, data} = chart;
+                    ctx.save();
+                    const xCoor = chart.getDatasetMeta(0).data[0].x;
+                    const yCoor = chart.getDatasetMeta(0).data[0].y;
+                    ctx.font = 'bold 30px sans-serif';
+                    ctx.fillStyle = 'rgb(99,169,31)';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText(`test`, xCoor, yCoor);
+                }
             }
-        }
 
-        const doughnutLabel2 = {
-            id: 'doughnutLabel2',
-            beforeDatasetsDraw(chart, args, pluginOptions) {
-                const {ctx, data} = chart;
-                ctx.save();
-                const xCoor = chart.getDatasetMeta(0).data[0].x;
-                const yCoor = chart.getDatasetMeta(0).data[0].y;
-                ctx.font = 'bold 30px sans-serif';
-                ctx.fillStyle = 'rgb(99,169,31)';
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'middle';
-                ctx.fillText(`time`, xCoor, yCoor);
+            const doughnutLabel2 = {
+                id: 'doughnutLabel2',
+                beforeDatasetsDraw(chart, args, pluginOptions) {
+                    const {ctx, data} = chart;
+                    ctx.save();
+                    const xCoor = chart.getDatasetMeta(0).data[0].x;
+                    const yCoor = chart.getDatasetMeta(0).data[0].y;
+                    ctx.font = 'bold 30px sans-serif';
+                    ctx.fillStyle = 'rgb(99,169,31)';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText(`time`, xCoor, yCoor);
+                }
             }
-        }
 
-        new Chart(ctx, {
-          type: 'doughnut',
-          data: {
-            datasets: [{
-                data: [300, 50],
-                backgroundColor: [
-                    'rgb(99,169,31)',
-                    'rgb(40,54,26)',
-                ],
-            }]
-          },
-          plugins: [doughnutLabel]
-        });
+            new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [300, 50],
+                    backgroundColor: [
+                        'rgb(99,169,31)',
+                        'rgb(40,54,26)',
+                    ],
+                }]
+            },
+            plugins: [doughnutLabel]
+            });
 
-        new Chart(ctx2, {
-          type: 'doughnut',
-          data: {
-            datasets: [{
-                data: [300, 50],
-                backgroundColor: [
-                    'rgb(99,169,31)',
-                    'rgb(40,54,26)',
-                ],
-            }]
-          },
-          plugins: [doughnutLabel2]
-        });
-      </script>
-
+            new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [300, 50],
+                    backgroundColor: [
+                        'rgb(99,169,31)',
+                        'rgb(40,54,26)',
+                    ],
+                }]
+            },
+            plugins: [doughnutLabel2]
+            });
+        </script>
+    </div>
       
 </body>
 </html>
