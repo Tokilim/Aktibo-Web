@@ -34,19 +34,29 @@ html {
 }
 
 #body_index {
+    min-height: 100vh;
     display: flex;
+    min-width: 30rem;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+
     background: #F0F7EE;
 }
 
+.parent-container {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
 .wrapper {
-    width: 420px;
+    margin-top: 10rem;
+    position: relative;
+    width: 28rem;
+    height: 30rem;
     background: #F0F7EE;
     color: #191919;
-    border-radius: 10px;
-    padding: 30px 40px;
+    border-radius: 0.5rem;
+    padding: 1.5rem 2rem;
 }
 
 .wrapper h1 {
@@ -220,12 +230,13 @@ header {
 }
 
 .smallnav {
+    position: fixed;
     display: none;
     text-align: center;
     top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-sizing:border-box;
+
     position: fixed;
     background-color: #63A91F;
     width: 22rem;
@@ -246,10 +257,10 @@ header {
 }
 
 .main_content{
-    margin-left: 10rem;
+    padding-left: 10rem;
     padding-top:7rem;
-    /* background-color:green; */
     text-align:center;
+    min-width: 25rem;
 }
 
 .container-b{
@@ -264,7 +275,19 @@ header {
     height:auto;
     margin:0 auto 1rem;
     border-bottom:0.02rem solid #000;
+    
     /* background-color:#fff; */
+}
+
+.exercises-container {
+    display: inline-block;
+    text-align: left;
+    width:15rem;
+    margin:0 0.5rem 1rem;
+}
+
+.article-wrapper {
+    height: 20rem;
 }
 
 .header_content{
@@ -303,7 +326,6 @@ header {
     vertical-align: middle;
     margin-left: 17rem;
     font-size: x-large;
-    transition: 0.5s;
 }
 
 .bx-dots-vertical:hover {
@@ -370,6 +392,86 @@ header {
     background-color:blue;
 }
 
+article {
+    --img-scale: 1.001;
+    --title-color: black;
+    --link-icon-translate: -20px;
+    --link-icon-opacity: 0;
+    position: relative;
+    border-radius: 16px;
+    box-shadow: none;
+    background: #fff;
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+  }
+  
+  article a::after {
+    position: absolute;
+    inset-block: 0;
+    inset-inline: 0;
+    cursor: pointer;
+    content: "";
+  }
+  
+  /* basic article elements styling */
+  article h2 {
+    margin: 0 0 18px 0;
+    font-family: "Bebas Neue", cursive;
+    font-size: 1.9rem;
+    letter-spacing: 0.06em;
+    color: var(--title-color);
+    transition: color 0.3s ease-out;
+  }
+  
+  figure {
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+  
+  article img {
+    max-width: 100%;
+    transform-origin: center;
+    transform: scale(var(--img-scale));
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .article-body {
+    padding: 24px;
+  }
+  
+  article a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #28666e;
+  }
+  
+  article a:focus {
+    outline: 1px dotted #28666e;
+  }
+  
+  article a .icon {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    transform: translateX(var(--link-icon-translate));
+    opacity: var(--link-icon-opacity);
+    transition: all 0.3s;
+  }
+  
+  /* using the has() relational pseudo selector to update our custom properties */
+  article:has(:hover, :focus) {
+    --img-scale: 1.1;
+    --title-color: #28666e;
+    --link-icon-translate: 0;
+    --link-icon-opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  }
+
 @media screen and (max-width:720px){
     .containerA,.containerB{
         width:7rem;
@@ -384,24 +486,44 @@ header {
     .smallnav {
         display: block;
     }
-    li {
-
+    
+    .main_content {
+        padding-left: 0;
     }
 
-    .main_content{
-        margin-left: 0;
-    }
+  
+   
 
 
 }
 
-@media screen and (max-width:500px){
-    .containerA,.containerB{
-        background-color:pink;
+@media screen and (max-width:540px){
+    
+    .wrapper{
+        padding-top: 20%;
+        
+        
+        box-sizing: border-box;
     }
-
+    
     .post {
-        padding: 0 1rem;
+        width: 22rem;
+    }    
+
+    .header_content > .bx-dots-vertical  {
+        margin-left: 14rem;
     }
+}
+
+@media screen and (max-width:400px){
+    
+
+
+    .wrapper{
+        padding-top: 10rem;
+        
+        box-sizing: border-box;
+    }
+    
 }
 
