@@ -281,13 +281,22 @@ header {
 
 .exercises-container {
     display: inline-block;
-    text-align: left;
+    justify-content: center;
+    text-align: center;
     width:15rem;
     margin:0 0.5rem 1rem;
 }
 
-.article-wrapper {
-    height: 20rem;
+.exercises_pic{
+    text-align: center;
+    justify-content: center;
+    width: 15rem;
+    background-color: red;
+}
+
+.article-body {
+    text-align: left;
+    height: 12rem;
 }
 
 .header_content{
