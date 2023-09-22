@@ -10,14 +10,10 @@
     <link rel = "stylesheet" href = "style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	
-<img src="Aktibo x200.png" id = "Aktibo_Logo" alt="Aktibo Logo">
-        
 </head>
-	
-<body id="body_home">
+<body id="body_home" style="height: 100%;>
     <header>
-        
+        <img src="Aktibo x200.png" id = "Aktibo_Logo" alt="Aktibo Logo">
     </header>
 	<div class = "wrapper_home">
         <div class = "sidebar">
@@ -29,8 +25,15 @@
             </ul>
         </div>
     <div class="main_content">
-   
-        
+        <div class="card">
+            <div class="container">
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                    <canvas id="myChart2"></canvas>
+                </div>
+            </div>
+          </div>
+          <script src="script.js"></script>
         </div>
     </div>
       

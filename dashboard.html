@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  style="height:100%">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body id="body_home">
+<body id="body_home" style="height:100%">
     <header>
         <img src="Aktibo x200.png" id = "Aktibo_Logo" alt="Aktibo Logo">
     </header>
@@ -30,33 +30,55 @@
     </div>
 
     <div class="main_content">
-        <div class="grid-container" style="background-color:aqua">
-            <div class="chart-container" style="background-color:red">
-                <canvas id="myChart"></canvas>
-                <canvas id="myChart2"></canvas>
+        <div class="grid-container">
+            <div class="chart-container1">
+                <div class="charts-1">
+                    <canvas id="myChart"></canvas>
+                    <canvas id="myChart2"></canvas>
+                </div>
             </div>
-            <div class="chart-container" style="background-color:orange">
+            <div class="chart-container">
                 <canvas id="myChart3"></canvas>
             </div>
-            <div class="chart-container" style="background-color:yellow">
+            <div class="chart-container">
                 <canvas id="myChart4"></canvas>
             </div>
-            <div class="chart-container" style="background-color:green">
-                September 2023
+            <div class="chart-container">
+                <button type="button">Temp1</button>
+                <button type="button">Temp2</button>
             </div>
-            <div class="chart-container" style="background-color:blue">
-                <div class="grid-container1">
+            <div class="chart-container2">
+                <div class="charts-large">
                     <canvas id="myChart5"></canvas>
                 </div>
-                <div class="grid-container2">
+                <div class="charts-small">
                     <canvas id="myChart6"></canvas>
                     <canvas id="myChart7"></canvas>
                     <canvas id="myChart8"></canvas>
                 </div>
             </div>
-            <div class="chart-container" style="background-color:violet">
+            <div class="chart-container">
                 <div class="calendar">
-                    <p class="current-date">September 2023</p>
+                    <div class="calhead">
+                        <button id="prevBtn">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button id="nextBtn">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="days">
+                        <div class="day">Mon</div>
+                        <div class="day">Tue</div>
+                        <div class="day">Wed</div>
+                        <div class="day">Thu</div>
+                        <div class="day">Fri</div>
+                        <div class="day">Sat</div>
+                        <div class="day">Sun</div>
+                    </div>
+                    <div class="dates" id="dates">
+
+                    </div>
                 </div>
             </div>
         </div>
